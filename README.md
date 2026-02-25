@@ -1,5 +1,36 @@
 # Livermore Computed Tomography Input Output software (LCTIO)
 
+## Tools included
+
+### Command line tools
+
+* `retiff`
+
+### Python package
+
+* `lctio`
+
+## Getting Started
+
+Install the `lctio` Python package for command line tools and importable library modules.
+You could download this repository, but if you are installing into a Python environment
+with internet access, you can use the `pip` command to automatically download
+the package from https://pypi.org/project/lctio/
+
+Example:
+
+    # Create and activate a Python virtual environment named "myvenv" (optional)
+    python3 -m venv myvenv
+    . myvenv/bin/activate
+    python -m pip install --upgrade pip
+
+    # Use `pip` to install the package from pypi.org
+    pip install lctio
+
+Command line help for the provided tools is available with the `--help` option.
+
+    retiff --help
+
 ## Scope
 
 The software includes code for Python, C/C++, and Java (and other languages, as needed) to support interoperability between tools and data formats commonly used for radiography and computed tomography at LLNL and elsewhere.
@@ -22,6 +53,11 @@ Additional formats and protocols may be implemented, as needed, to support inter
 LLNL-specific data structures and file formats may be refined or updated in conjunction with updates to the LLNL CT Standard.
 
 The object modeling language may be expanded as necessary to support conversion to and from other open 3D modeling standards, such as the STL format used in Computer Aided Design.
+
+## Contributing
+
+Getting Involved - Information about mailing lists or other ways users can connect with you and each other.
+Instructions for how you’d like people to contribute to your code.
 
 ## License
 

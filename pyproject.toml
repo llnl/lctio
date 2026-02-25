@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lctio"
+version = "0.1.0"
+description = "Livermore Computed Tomography Input Output software (LCTIO)"
+requires-python = ">=3.10"
+readme = "README.md"
+license = "BSD-3-Clause"
+license-files = ["LICENSE", "NOTICE"]
+authors = [
+    {name = "Eric Vardar-Irrgang", email = "vardarirrgan1@llnl.gov"}
+]
+maintainers = [
+    {name = "Eric Vardar-Irrgang", email = "vardarirrgan1@llnl.gov"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
+]
+dependencies = [
+    "numpy",
+    "pillow",
+    "tifffile",
+]
+
+[project.urls]
+Homepage = "https://github.com/llnl/lctio/"
+Documentation = "https://github.com/llnl/lctio/"
+Repository = "https://github.com/llnl/lctio/"
+Issues = "https://github.com/llnl/lctio/issues"
+
+[project.scripts]
+retiff = "lctio.retiff:main"
+
+[tool.setuptools]
+packages = ["lctio", "lctio.retiff"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.package-data]
+lctio = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+#addopts = "--cov=lctio --cov-report=term --cov-report=xml:reports/junit/coverage.xml --junit-xml=reports/junit/pytest.xml"
+
+[tool.black]
+line-length = 88
+target-version = ["py310", "py311", "py312", "py313", "py314", "py315"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+select = ["E", "F", "W", "I", "N", "UP"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
