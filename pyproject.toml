@@ -31,6 +31,12 @@ dependencies = [
     "tifffile",
 ]
 
+[project.optional-dependencies]
+docs = [
+    "furo",
+    "sphinx>=9,<10",
+]
+
 [project.urls]
 Homepage = "https://github.com/llnl/lctio/"
 Documentation = "https://github.com/llnl/lctio/"
